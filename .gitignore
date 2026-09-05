@@ -1,0 +1,19 @@
+# Local benchmark and test runs are intentionally kept out of the skill repo.
+/tests/
+
+# Local machine and Python artifacts.
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local configuration and secrets.
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+
+# Local logs and generated reports.
+*.log

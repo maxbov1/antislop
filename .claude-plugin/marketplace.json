@@ -1,0 +1,24 @@
+{
+  "name": "antislop",
+  "owner": {
+    "name": "Antislop contributors"
+  },
+  "metadata": {
+    "description": "Presentation-focused website audits for product fit, credibility, personality, UX, and AI slop."
+  },
+  "plugins": [
+    {
+      "name": "antislop",
+      "source": "./",
+      "description": "Audit websites for product mismatch, generic AI patterns, synthetic copy, credibility risks, and presentation-level UX problems.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/maxbov1/antislop",
+      "repository": "https://github.com/maxbov1/antislop",
+      "author": {
+        "name": "Antislop contributors"
+      },
+      "license": "MIT",
+      "keywords": ["website-audit", "design-review", "ai-slop", "ux", "accessibility"]
+    }
+  ]
+}

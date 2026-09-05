@@ -1,0 +1,10 @@
+{
+  "name": "antislop",
+  "description": "Audit websites for product mismatch, generic AI patterns, synthetic copy, credibility risks, and presentation-level UX problems.",
+  "version": "0.1.0",
+  "author": { "name": "Antislop contributors" },
+  "homepage": "https://github.com/maxbov1/antislop",
+  "repository": "https://github.com/maxbov1/antislop",
+  "license": "MIT",
+  "keywords": ["website-audit", "design-review", "ai-slop", "ux", "accessibility", "copywriting"]
+}

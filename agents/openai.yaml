@@ -1,0 +1,15 @@
+interface:
+  display_name: Antislop
+  short_description: Audit websites for product mismatch and AI slop
+  default_prompt: Review this URL, or review me as the current repository's frontend,
+    for product-to-website fit, AI-generated design and copy patterns, UX problems,
+    and implementation-ready fixes.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
