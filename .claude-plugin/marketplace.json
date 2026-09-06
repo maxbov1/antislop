@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "antislop",
-      "source": "./",
+      "source": "./plugins/antislop",
       "description": "Audit websites for product mismatch, generic AI patterns, synthetic copy, credibility risks, and presentation-level UX problems.",
       "version": "0.1.0",
       "homepage": "https://github.com/maxbov1/antislop",

@@ -18,19 +18,19 @@ server, and Claude Code is optional for plugin validation.
 
 ## Repository layout
 
-- `SKILL.md` is the canonical skill instruction file.
-- `references/` contains focused guidance and the report template.
+- `plugins/antislop/skills/antislop/SKILL.md` is the canonical skill instruction file.
+- `plugins/antislop/skills/antislop/references/` contains focused guidance and the report template.
 - `examples/` contains public, URL-only HTML fixtures for manual evaluation.
 - `tests/` is local-only and ignored; it may contain private labels and benchmark notes.
-- `.claude-plugin/` contains Claude Code plugin metadata.
-- `agents/` contains Codex UI metadata and is not required by Claude Code.
+- `.claude-plugin/` and `.agents/plugins/` contain the Claude and Codex marketplace catalogs.
+- `plugins/antislop/` contains the shared plugin package and its ecosystem manifests.
 
 ## Testing
 
 ```bash
 python3 tests/run.py --list
 python3 tests/run.py --case case-001
-claude --plugin-dir .
+claude --plugin-dir plugins/antislop
 ```
 
 Inside Claude Code, invoke the namespaced skill shown by `/help`. Run `/reload-plugins`

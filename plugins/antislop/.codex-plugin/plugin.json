@@ -1,0 +1,28 @@
+{
+  "name": "antislop",
+  "version": "0.1.0",
+  "description": "Audit websites for product fit, generic AI patterns, synthetic copy, credibility risks, and presentation-level UX problems.",
+  "author": {
+    "name": "Antislop contributors",
+    "url": "https://github.com/maxbov1"
+  },
+  "homepage": "https://github.com/maxbov1/antislop",
+  "repository": "https://github.com/maxbov1/antislop",
+  "license": "MIT",
+  "keywords": ["website-audit", "design-review", "ai-slop", "ux", "accessibility", "copywriting"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Antislop",
+    "shortDescription": "Audit websites for product fit and AI slop",
+    "longDescription": "Review a live URL or frontend repository for product mismatch, generic AI patterns, synthetic copy, credibility risks, personality, UX, accessibility, and presentation-level problems.",
+    "developerName": "Antislop contributors",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "defaultPrompt": [
+      "Use Antislop to audit this website for product fit and AI slop.",
+      "Use Antislop on the current repository's frontend.",
+      "Use Antislop to review this URL without editing anything."
+    ],
+    "brandColor": "#176B4D"
+  }
+}

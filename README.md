@@ -14,7 +14,7 @@ frontend defect.
 Install this directory as `antislop` in the Codex skills directory:
 
 ```bash
-cp -R /path/to/antislop-skill ~/.codex/skills/antislop
+cp -R /path/to/antislop-skill/plugins/antislop/skills/antislop ~/.codex/skills/antislop
 ```
 
 Then invoke it with a URL or the current repository:
@@ -26,8 +26,8 @@ $antislop me
 
 ## Common Commands
 
-This repository is both a standalone skill and a Claude Code plugin. Keep `SKILL.md`
-and `references/` together because the skill loads its bundled guidance from there.
+This repository is a marketplace containing one shared plugin. The canonical skill lives
+at `plugins/antislop/skills/antislop/` and is packaged for both Claude Code and Codex.
 
 Run the local fixture suite:
 
@@ -39,8 +39,12 @@ python3 tests/run.py --case case-001
 Validate the skill and Claude plugin:
 
 ```bash
-python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py \
+  plugins/antislop/skills/antislop
 claude plugin validate .
+claude plugin validate plugins/antislop
+python3 ~/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py \
+  plugins/antislop
 ```
 
 `$antislop me` means: discover and review the frontend or landing page in the
@@ -75,7 +79,7 @@ With the built-in installer:
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo maxbov1/antislop \
-  --path .
+  --path plugins/antislop/skills/antislop
 ```
 
 ## Install in Claude Code
@@ -83,19 +87,18 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 For local development or a checkout, load the plugin directly:
 
 ```bash
-claude --plugin-dir /path/to/antislop-skill
+claude --plugin-dir /path/to/antislop-skill/plugins/antislop
 ```
 
-Inside that Claude session, run `/help` and invoke `/antislop`. For example:
+Inside that Claude session, run `/help` and invoke the namespaced skill. For example:
 
 ```text
-/antislop https://example.com
-/antislop me
+/antislop:antislop https://example.com
+/antislop:antislop me
 ```
 
-This repository uses a single root `SKILL.md`, so Claude exposes `/antislop` directly.
-`$antislop` is the Codex invocation syntax. Run `/reload-plugins` after changing the
-checkout during the same Claude session.
+`$antislop` is the standalone Codex skill syntax. Run `/reload-plugins` after changing
+the checkout during the same Claude session.
 
 To install from a published marketplace, use the marketplace’s instructions. For the
 Anthropic community marketplace, the eventual flow is:
@@ -107,7 +110,7 @@ claude plugin install antislop@claude-community
 
 The exact install command becomes available after marketplace review and publication.
 
-This repository also contains a marketplace catalog at
+This repository also contains marketplace catalogs at
 `.claude-plugin/marketplace.json`. After publishing it to GitHub, users can add the
 repository and install the plugin from its catalog:
 
@@ -115,6 +118,16 @@ repository and install the plugin from its catalog:
 /plugin marketplace add maxbov1/antislop
 /plugin install antislop@antislop
 ```
+
+Codex/ChatGPT workspace users can add the repo marketplace with:
+
+```text
+codex plugin marketplace add maxbov1/antislop
+```
+
+The Codex marketplace catalog lives at `.agents/plugins/marketplace.json`. The plugin
+package itself is under `plugins/antislop/` and contains the shared skill at
+`plugins/antislop/skills/antislop/SKILL.md`.
 
 For local testing of the catalog:
 

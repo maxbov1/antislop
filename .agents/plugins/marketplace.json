@@ -1,0 +1,20 @@
+{
+  "name": "antislop",
+  "interface": {
+    "displayName": "Antislop"
+  },
+  "plugins": [
+    {
+      "name": "antislop",
+      "source": {
+        "source": "local",
+        "path": "./plugins/antislop"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
