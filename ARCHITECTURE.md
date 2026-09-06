@@ -16,8 +16,6 @@ in the current repository.
 - `.claude-plugin/marketplace.json`: Claude marketplace catalog.
 - `.agents/plugins/marketplace.json`: Codex/ChatGPT marketplace catalog.
 - `plugins/antislop/skills/antislop/agents/openai.yaml`: Codex skill UI metadata and invocation policy.
-- `examples/`: tracked multi-page fixtures for behavioral evaluation.
-- `tests/`: ignored local runner and evaluator-only labels.
 
 ## Data flow
 
@@ -36,9 +34,8 @@ tooling is optional and only strengthens runtime evidence.
 
 ## Runtime and dependencies
 
-The package has no application dependencies. Development uses Python 3 for the ignored
-fixture server, Codex for plugin validation, and Claude Code for plugin validation. Codex
-reads the skill's `agents/openai.yaml`; Claude Code does not require that file.
+The package has no application dependencies. Codex reads the skill's `agents/openai.yaml`;
+Claude Code does not require that file.
 
 ## Operational concerns
 
